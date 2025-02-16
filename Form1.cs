@@ -19,8 +19,10 @@ namespace Notatnik
             try
             {
                 File.AppendAllText(sciezkaPliku, txtWpiszTekst.Text);
+                txtWpiszTekst.Text = " ";
 
             }
+
             catch (Exception ex)
             {
             }
