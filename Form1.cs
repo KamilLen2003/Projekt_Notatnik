@@ -6,7 +6,7 @@ namespace Notatnik
 {
     public partial class Form1 : Form
     {
-        private string sciezkaPliku = "notatki.txt"; // Ścieżka do pliku
+        private string sciezkaPliku = "notatnik.txt"; // Ścieżka do pliku
 
         public Form1()
         {
@@ -18,8 +18,9 @@ namespace Notatnik
         {
             try
             {
-                File.AppendAllText(sciezkaPliku, txtWpiszTekst.Text);
-                txtWpiszTekst.Text = " ";
+                string tekst = "\r\n" + txtWpiszTekst.Text; // Nowa linia
+                File.AppendAllText(sciezkaPliku, tekst);
+                txtWpiszTekst.Text = " "; // czyszczenie pola po zapisaniu
 
             }
 
@@ -44,7 +45,6 @@ namespace Notatnik
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd odczytu: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
