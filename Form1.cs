@@ -26,6 +26,8 @@ namespace Notatnik
 
             catch (Exception ex)
             {
+                MessageBox.Show("Błąd zapisu: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -45,6 +47,8 @@ namespace Notatnik
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Błąd odczytu: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
